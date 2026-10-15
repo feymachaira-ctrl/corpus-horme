@@ -27,6 +27,47 @@
       <feGaussianBlur stdDeviation="2"/>
     </filter>
   </defs>
+  <style>
+    .signal-wave {
+      stroke-dasharray: 8 13;
+      animation: signal-flow 4s linear infinite;
+    }
+    .signal-wave.return {
+      animation-direction: reverse;
+    }
+    .monarch-form,
+    .human-form {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: breathe 3.2s ease-in-out infinite alternate;
+    }
+    .human-form {
+      animation-delay: -1.6s;
+    }
+    .field-node {
+      animation: node-pulse 2.2s ease-in-out infinite alternate;
+    }
+    @keyframes signal-flow {
+      to { stroke-dashoffset: -84; }
+    }
+    @keyframes breathe {
+      to { transform: scale(1.055); opacity: .78; }
+    }
+    @keyframes node-pulse {
+      to { opacity: .42; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .signal-wave,
+      .monarch-form,
+      .human-form,
+      .field-node {
+        animation: none;
+      }
+      .moving-signal {
+        display: none;
+      }
+    }
+  </style>
 
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
     <ellipse cx="450" cy="390" rx="397" ry="325" stroke="#f5a53e" stroke-opacity=".12" stroke-width="2"/>
@@ -44,13 +85,31 @@
     <path d="M577 295C600 278 624 278 647 295C670 312 694 312 717 295" stroke="#f7f1e8" stroke-width="7"/>
     <path d="M577 485C600 520 624 520 647 485C670 450 694 450 717 485" stroke="#80c8d6" stroke-width="7"/>
 
-    <path d="M323 295C370 307 393 335 412 362M323 485C370 473 393 445 412 418M577 295C530 307 507 335 488 362M577 485C530 473 507 445 488 418" stroke="#f5a53e" stroke-opacity=".55" stroke-width="3" stroke-dasharray="5 9"/>
+    <path class="signal-wave" d="M323 295C370 307 393 335 412 362M323 485C370 473 393 445 412 418" stroke="#f5a53e" stroke-opacity=".72" stroke-width="3"/>
+    <path class="signal-wave return" d="M577 295C530 307 507 335 488 362M577 485C530 473 507 445 488 418" stroke="#80c8d6" stroke-opacity=".72" stroke-width="3"/>
+    <path d="M285 390C344 314 399 330 450 390C507 458 567 462 640 390" stroke="url(#warm)" stroke-opacity=".42" stroke-width="3" stroke-dasharray="3 11"/>
+    <path d="M640 390C573 321 512 326 450 390C391 451 342 462 285 390" stroke="url(#cool)" stroke-opacity=".34" stroke-width="3" stroke-dasharray="3 11"/>
+
+    <g class="moving-signal" filter="url(#glow)">
+      <circle r="7" fill="#ffd381">
+        <animateMotion dur="3.4s" repeatCount="indefinite" path="M285 390C344 314 399 330 450 390C507 458 567 462 640 390"/>
+      </circle>
+      <circle r="4" fill="#ef6d42">
+        <animateMotion dur="3.4s" begin="-1.7s" repeatCount="indefinite" path="M285 390C344 314 399 330 450 390C507 458 567 462 640 390"/>
+      </circle>
+      <circle r="7" fill="#80c8d6">
+        <animateMotion dur="4.1s" repeatCount="indefinite" path="M640 390C573 321 512 326 450 390C391 451 342 462 285 390"/>
+      </circle>
+      <circle r="4" fill="#f7f1e8">
+        <animateMotion dur="4.1s" begin="-2.05s" repeatCount="indefinite" path="M640 390C573 321 512 326 450 390C391 451 342 462 285 390"/>
+      </circle>
+    </g>
 
     <circle cx="450" cy="390" r="65" fill="url(#sun)" stroke="#ffd381" stroke-width="3" filter="url(#glow)"/>
     <circle cx="450" cy="390" r="93" stroke="#f5a53e" stroke-opacity=".3" stroke-width="2"/>
     <path d="M450 270V297M450 483V510M330 390H357M543 390H570M365 305L384 324M516 456L535 475M365 475L384 456M516 324L535 305" stroke="#ffd381" stroke-width="4"/>
 
-    <g stroke="#ffd381" stroke-width="3">
+    <g class="monarch-form" stroke="#ffd381" stroke-width="3">
       <path d="M190 369C218 341 257 341 285 369C257 399 218 399 190 369Z"/>
       <path d="M285 369C313 341 352 341 380 369C352 399 313 399 285 369Z"/>
       <path d="M190 411C218 439 257 439 285 411C257 381 218 381 190 411Z"/>
@@ -58,7 +117,7 @@
     </g>
     <circle cx="285" cy="390" r="9" fill="#f5a53e" stroke="none"/>
 
-    <g stroke="#80c8d6" stroke-width="3">
+    <g class="human-form" stroke="#80c8d6" stroke-width="3">
       <circle cx="616" cy="350" r="17"/>
       <circle cx="666" cy="390" r="17"/>
       <circle cx="616" cy="430" r="17"/>
@@ -70,7 +129,7 @@
     <path d="M394 628L450 595L506 628L450 661Z" stroke="url(#warm)" stroke-width="4"/>
     <path d="M394 628L450 693L506 628M450 595V661" stroke="#80c8d6" stroke-opacity=".65" stroke-width="3"/>
 
-    <g fill="#f5a53e" stroke="none" filter="url(#soft)">
+    <g class="field-node" fill="#f5a53e" stroke="none" filter="url(#soft)">
       <circle cx="84" cy="390" r="5"/>
       <circle cx="145" cy="268" r="5"/>
       <circle cx="145" cy="512" r="5"/>
@@ -80,7 +139,7 @@
       <circle cx="450" cy="595" r="5"/>
       <circle cx="506" cy="628" r="5"/>
     </g>
-    <g fill="#80c8d6" stroke="none" filter="url(#soft)">
+    <g class="field-node" fill="#80c8d6" stroke="none" filter="url(#soft)">
       <circle cx="816" cy="390" r="5"/>
       <circle cx="560" cy="268" r="5"/>
       <circle cx="560" cy="512" r="5"/>

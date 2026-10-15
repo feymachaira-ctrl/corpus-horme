@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 780" role="img" aria-labelledby="title description">
+  <title id="title">Cross-species hormonal rhythm diagram</title>
+  <desc id="description">An abstract systems diagram showing solar input coupling distinct monarch and human endocrine rhythms to a shared computational field.</desc>
+  <defs>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#fff4c7"/>
+      <stop offset=".34" stop-color="#ffd381"/>
+      <stop offset=".72" stop-color="#f5a53e"/>
+      <stop offset="1" stop-color="#ef6d42" stop-opacity=".1"/>
+    </radialGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd381"/>
+      <stop offset="1" stop-color="#dd3156"/>
+    </linearGradient>
+    <linearGradient id="cool" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#80c8d6"/>
+      <stop offset="1" stop-color="#f7f1e8"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="450" cy="390" rx="397" ry="325" stroke="#f5a53e" stroke-opacity=".12" stroke-width="2"/>
+    <ellipse cx="450" cy="390" rx="323" ry="259" stroke="#f5a53e" stroke-opacity=".18" stroke-width="2" stroke-dasharray="4 13"/>
+    <ellipse cx="450" cy="390" rx="236" ry="188" stroke="#80c8d6" stroke-opacity=".14" stroke-width="2"/>
+
+    <path d="M84 390C176 222 286 208 450 390C614 572 724 558 816 390" stroke="url(#warm)" stroke-opacity=".34" stroke-width="4"/>
+    <path d="M84 390C176 558 286 572 450 390C614 208 724 222 816 390" stroke="url(#cool)" stroke-opacity=".28" stroke-width="4"/>
+
+    <path d="M145 268C207 225 278 225 340 268M145 512C207 555 278 555 340 512" stroke="#f5a53e" stroke-opacity=".42" stroke-width="3"/>
+    <path d="M560 268C622 225 693 225 755 268M560 512C622 555 693 555 755 512" stroke="#80c8d6" stroke-opacity=".42" stroke-width="3"/>
+
+    <path d="M183 295C206 317 230 317 253 295C276 273 300 273 323 295" stroke="#ffd381" stroke-width="7"/>
+    <path d="M183 485C206 451 230 451 253 485C276 519 300 519 323 485" stroke="#ef6d42" stroke-width="7"/>
+    <path d="M577 295C600 278 624 278 647 295C670 312 694 312 717 295" stroke="#f7f1e8" stroke-width="7"/>
+    <path d="M577 485C600 520 624 520 647 485C670 450 694 450 717 485" stroke="#80c8d6" stroke-width="7"/>
+
+    <path d="M323 295C370 307 393 335 412 362M323 485C370 473 393 445 412 418M577 295C530 307 507 335 488 362M577 485C530 473 507 445 488 418" stroke="#f5a53e" stroke-opacity=".55" stroke-width="3" stroke-dasharray="5 9"/>
+
+    <circle cx="450" cy="390" r="65" fill="url(#sun)" stroke="#ffd381" stroke-width="3" filter="url(#glow)"/>
+    <circle cx="450" cy="390" r="93" stroke="#f5a53e" stroke-opacity=".3" stroke-width="2"/>
+    <path d="M450 270V297M450 483V510M330 390H357M543 390H570M365 305L384 324M516 456L535 475M365 475L384 456M516 324L535 305" stroke="#ffd381" stroke-width="4"/>
+
+    <g stroke="#ffd381" stroke-width="3">
+      <path d="M190 369C218 341 257 341 285 369C257 399 218 399 190 369Z"/>
+      <path d="M285 369C313 341 352 341 380 369C352 399 313 399 285 369Z"/>
+      <path d="M190 411C218 439 257 439 285 411C257 381 218 381 190 411Z"/>
+      <path d="M285 411C313 439 352 439 380 411C352 381 313 381 285 411Z"/>
+    </g>
+    <circle cx="285" cy="390" r="9" fill="#f5a53e" stroke="none"/>
+
+    <g stroke="#80c8d6" stroke-width="3">
+      <circle cx="616" cy="350" r="17"/>
+      <circle cx="666" cy="390" r="17"/>
+      <circle cx="616" cy="430" r="17"/>
+      <path d="M633 356L650 377M650 403L633 424M599 424L582 403M582 377L599 356"/>
+      <path d="M666 373V344M666 436V407"/>
+    </g>
+
+    <path d="M450 455V608" stroke="#f5a53e" stroke-opacity=".6" stroke-width="3" stroke-dasharray="4 9"/>
+    <path d="M394 628L450 595L506 628L450 661Z" stroke="url(#warm)" stroke-width="4"/>
+    <path d="M394 628L450 693L506 628M450 595V661" stroke="#80c8d6" stroke-opacity=".65" stroke-width="3"/>
+
+    <g fill="#f5a53e" stroke="none" filter="url(#soft)">
+      <circle cx="84" cy="390" r="5"/>
+      <circle cx="145" cy="268" r="5"/>
+      <circle cx="145" cy="512" r="5"/>
+      <circle cx="340" cy="268" r="5"/>
+      <circle cx="340" cy="512" r="5"/>
+      <circle cx="394" cy="628" r="5"/>
+      <circle cx="450" cy="595" r="5"/>
+      <circle cx="506" cy="628" r="5"/>
+    </g>
+    <g fill="#80c8d6" stroke="none" filter="url(#soft)">
+      <circle cx="816" cy="390" r="5"/>
+      <circle cx="560" cy="268" r="5"/>
+      <circle cx="560" cy="512" r="5"/>
+      <circle cx="755" cy="268" r="5"/>
+      <circle cx="755" cy="512" r="5"/>
+      <circle cx="450" cy="661" r="5"/>
+    </g>
+  </g>
+
+  <g font-family="Helvetica Neue, Arial, sans-serif" letter-spacing="3">
+    <text x="253" y="181" fill="#ffd381" font-size="19" font-weight="700" text-anchor="middle">MONARCH RHYTHM</text>
+    <text x="253" y="204" fill="#b8b1a8" font-size="12" text-anchor="middle">ORIENTATION · MOVEMENT</text>
+    <text x="647" y="181" fill="#80c8d6" font-size="19" font-weight="700" text-anchor="middle">HUMAN RHYTHM</text>
+    <text x="647" y="204" fill="#b8b1a8" font-size="12" text-anchor="middle">ENDOCRINE REGULATION</text>
+    <text x="450" y="384" fill="#070807" font-size="16" font-weight="800" text-anchor="middle">SOLAR</text>
+    <text x="450" y="405" fill="#070807" font-size="16" font-weight="800" text-anchor="middle">INPUT</text>
+    <text x="450" y="735" fill="#f5a53e" font-size="17" font-weight="700" text-anchor="middle">SHARED COMPUTATIONAL FIELD</text>
+  </g>
+</svg>

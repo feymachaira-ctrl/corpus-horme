@@ -30,7 +30,6 @@ const stageButtons = [...document.querySelectorAll(".stage")];
 const detailKicker = document.querySelector("#detail-kicker");
 const detailTitle = document.querySelector("#detail-title");
 const detailCopy = document.querySelector("#detail-copy");
-const motionToggle = document.querySelector("#motion-toggle");
 
 stageButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -46,8 +45,31 @@ stageButtons.forEach((button) => {
   });
 });
 
-motionToggle.addEventListener("click", () => {
-  const paused = document.body.classList.toggle("motion-paused");
-  motionToggle.textContent = paused ? "Resume motion" : "Pause motion";
-  motionToggle.setAttribute("aria-pressed", String(paused));
+const videoTrigger = document.querySelector(".hero-video-trigger");
+const videoDialog = document.querySelector("#sculpture-video-dialog");
+const sculptureVideo = document.querySelector("#sculpture-video");
+const videoClose = document.querySelector(".video-dialog-close");
+
+function closeVideo() {
+  sculptureVideo.pause();
+  sculptureVideo.currentTime = 0;
+  videoDialog.close();
+}
+
+videoTrigger.addEventListener("click", () => {
+  videoDialog.showModal();
+  sculptureVideo.play();
+});
+
+videoClose.addEventListener("click", closeVideo);
+
+videoDialog.addEventListener("click", (event) => {
+  if (event.target === videoDialog) {
+    closeVideo();
+  }
+});
+
+videoDialog.addEventListener("cancel", (event) => {
+  event.preventDefault();
+  closeVideo();
 });

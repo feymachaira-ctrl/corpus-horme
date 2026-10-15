@@ -46,30 +46,24 @@ stageButtons.forEach((button) => {
 });
 
 const videoTrigger = document.querySelector(".hero-video-trigger");
-const videoDialog = document.querySelector("#sculpture-video-dialog");
 const sculptureVideo = document.querySelector("#sculpture-video");
-const videoClose = document.querySelector(".video-dialog-close");
+const videoClose = document.querySelector(".hero-video-close");
 
 function closeVideo() {
   sculptureVideo.pause();
   sculptureVideo.currentTime = 0;
-  videoDialog.close();
+  sculptureVideo.hidden = true;
+  videoClose.hidden = true;
+  videoTrigger.hidden = false;
+  videoTrigger.setAttribute("aria-expanded", "false");
 }
 
 videoTrigger.addEventListener("click", () => {
-  videoDialog.showModal();
+  videoTrigger.hidden = true;
+  sculptureVideo.hidden = false;
+  videoClose.hidden = false;
+  videoTrigger.setAttribute("aria-expanded", "true");
   sculptureVideo.play();
 });
 
 videoClose.addEventListener("click", closeVideo);
-
-videoDialog.addEventListener("click", (event) => {
-  if (event.target === videoDialog) {
-    closeVideo();
-  }
-});
-
-videoDialog.addEventListener("cancel", (event) => {
-  event.preventDefault();
-  closeVideo();
-});

@@ -45,10 +45,17 @@
       </article>
 
       <figure class="hero-figure">
-        <button class="hero-video-trigger" type="button" aria-haspopup="dialog" aria-controls="sculpture-video-dialog">
-          <img src="assets/corpus-horme-wing-study.jpg" alt="Technical drawing of a butterfly-shaped kinetic sculpture with mechanical connections distributed along its wings">
-          <span class="play-prompt"><i aria-hidden="true">▶</i> Watch the sculpture in motion</span>
-        </button>
+        <div class="hero-media">
+          <button class="hero-video-trigger" type="button" aria-controls="sculpture-video" aria-expanded="false">
+            <img src="assets/corpus-horme-wing-study.jpg" alt="Technical drawing of a butterfly-shaped kinetic sculpture with mechanical connections distributed along its wings">
+            <span class="play-prompt"><i aria-hidden="true">▶</i> Watch the sculpture in motion</span>
+          </button>
+          <video id="sculpture-video" class="hero-video" loop playsinline controls preload="metadata" poster="assets/corpus-horme-wing-study.jpg" hidden>
+            <source src="assets/corpus-horme-motion.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+          <button class="hero-video-close" type="button" aria-label="Return to butterfly image" hidden>×</button>
+        </div>
         <figcaption><span>Corpus Hormē</span> Kinetic wing study: a material interface for light, motion, and environmental response. <strong class="screen-only">Select the butterfly to play the video.</strong></figcaption>
       </figure>
 
@@ -217,22 +224,6 @@
       </div>
     </footer>
   </main>
-
-  <dialog class="video-dialog" id="sculpture-video-dialog" aria-labelledby="video-dialog-title">
-    <div class="video-dialog-inner">
-      <div class="video-dialog-header">
-        <div>
-          <p>Corpus Hormē</p>
-          <h2 id="video-dialog-title">Sculpture in motion</h2>
-        </div>
-        <button class="video-dialog-close" type="button" aria-label="Close video">×</button>
-      </div>
-      <video id="sculpture-video" loop playsinline controls preload="metadata" poster="assets/corpus-horme-wing-study.jpg">
-        <source src="assets/corpus-horme-motion.mp4" type="video/mp4">
-        Your browser does not support embedded video.
-      </video>
-    </div>
-  </dialog>
 
   <script src="script.js"></script>
 </body>

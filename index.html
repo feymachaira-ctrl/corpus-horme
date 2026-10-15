@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Corpus Horme: an interactive research poster tracing environmental signals through monarch physiology, computational synthesis, and kinetic installation.">
+  <title>Corpus Hormē — Polytope of Synthetic Emotions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <nav class="screen-nav" aria-label="Poster controls">
+    <a href="#poster">Enter poster</a>
+    <button id="motion-toggle" type="button" aria-pressed="false">Pause motion</button>
+    <button type="button" onclick="window.print()">Print 18 × 24</button>
+  </nav>
+
+  <main id="poster" class="poster">
+    <header class="masthead">
+      <div class="eyebrow">Research-creation · computational arts · multispecies affect</div>
+      <div class="title-row">
+        <div>
+          <h1>POLYTOPE OF<br><span>SYNTHETIC EMOTIONS</span></h1>
+          <p class="subtitle"><i>Corpus Hormē</i>: affect between body, environment, and machine</p>
+        </div>
+        <img class="york-logo" src="assets/york-university-logo.png" alt="York University">
+      </div>
+      <div class="author-row">
+        <strong>Hrysovalanti Fereniki Maheras</strong>
+        <span>PhD Candidate, Digital Media</span>
+        <span>School of the Arts, Media, Performance &amp; Design</span>
+      </div>
+      <blockquote>
+        What if emotion does not originate within the body, but emerges through its exchanges with the environment?
+      </blockquote>
+    </header>
+
+    <section class="intro-grid">
+      <article class="card premise">
+        <p class="section-number">01 / PREMISE</p>
+        <h2>Emotion is not contained.</h2>
+        <p><i>Corpus Hormē</i> treats affect as an embodied, relational, and environmentally contingent process. Heat, light, movement, sound, and atmosphere do not merely surround a body: they participate in its physiological state.</p>
+        <p class="research-question"><strong>Research question</strong><br>How can computational art reveal and engage the imperceptible biological processes involved in the synthesis of emotion across species?</p>
+      </article>
+
+      <figure class="hero-figure">
+        <img src="assets/corpus-horme-wing-study.jpg" alt="Technical drawing of a butterfly-shaped kinetic sculpture with mechanical connections distributed along its wings">
+        <figcaption><span>Corpus Hormē</span> Kinetic wing study: a material interface for light, motion, and environmental response.</figcaption>
+      </figure>
+
+      <article class="card lens">
+        <p class="section-number">02 / BIOLOGICAL LENS</p>
+        <h2>The monarch as model</h2>
+        <p>The monarch’s body is read as an <em>Umwelt</em>: a world shaped through solar orientation, temperature, sensory feedback, hormonal regulation, and adaptive movement.</p>
+        <ul class="signal-list">
+          <li><span>Input</span> solar radiation + ambient heat</li>
+          <li><span>Body</span> sensory + physiological regulation</li>
+          <li><span>Action</span> orientation + movement</li>
+          <li><span>Feedback</span> changed environmental relation</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="system-section" aria-labelledby="system-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-number">03 / RELATIONAL SYSTEM</p>
+          <h2 id="system-title">From environmental signal to synthetic affect</h2>
+        </div>
+        <p>Choose a stage to trace the translation.</p>
+      </div>
+
+      <div class="system-map" id="system-map">
+        <svg class="flow-lines" viewBox="0 0 1000 290" role="img" aria-label="Environmental signals flow through the monarch body, computational synthesis, Corpus Horme, and the final polytope">
+          <defs>
+            <linearGradient id="warm-flow" x1="0" x2="1">
+              <stop offset="0" stop-color="#ffce72"/>
+              <stop offset=".48" stop-color="#f07832"/>
+              <stop offset="1" stop-color="#dd3156"/>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <path class="flow-path base" d="M78 146 C168 50 218 238 310 146 S453 56 542 146 S685 236 774 146 S893 66 946 146"/>
+          <path class="flow-path pulse" d="M78 146 C168 50 218 238 310 146 S453 56 542 146 S685 236 774 146 S893 66 946 146"/>
+        </svg>
+
+        <div class="stages" role="list">
+          <button class="stage is-active" type="button" data-stage="environment" aria-pressed="true">
+            <span class="stage-index">1</span>
+            <span class="stage-icon sun-icon" aria-hidden="true">☼</span>
+            <strong>Environment</strong>
+            <small>sunlight · heat · atmosphere</small>
+          </button>
+          <button class="stage" type="button" data-stage="body" aria-pressed="false">
+            <span class="stage-index">2</span>
+            <span class="stage-icon butterfly-icon" aria-hidden="true">↔</span>
+            <strong>Permeable body</strong>
+            <small>sensation · thermal exchange</small>
+          </button>
+          <button class="stage" type="button" data-stage="physiology" aria-pressed="false">
+            <span class="stage-index">3</span>
+            <span class="stage-icon" aria-hidden="true">∿</span>
+            <strong>Physiology</strong>
+            <small>hormonal rhythm · neural activity</small>
+          </button>
+          <button class="stage" type="button" data-stage="computation" aria-pressed="false">
+            <span class="stage-index">4</span>
+            <span class="stage-icon" aria-hidden="true">⌘</span>
+            <strong>Computation</strong>
+            <small>agents · rules · feedback</small>
+          </button>
+          <button class="stage" type="button" data-stage="installation" aria-pressed="false">
+            <span class="stage-index">5</span>
+            <span class="stage-icon" aria-hidden="true">✦</span>
+            <strong>Installation</strong>
+            <small>light · sound · movement</small>
+          </button>
+        </div>
+
+        <aside class="stage-detail" aria-live="polite">
+          <p id="detail-kicker">STAGE 1 · EXCITATION</p>
+          <h3 id="detail-title">The environment enters the system.</h3>
+          <p id="detail-copy">Solar energy and ambient temperature establish the conditions for bodily regulation and movement. The environment is an active participant, not a backdrop.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="translation-grid">
+      <article class="card method-card">
+        <p class="section-number">04 / NON-INVASIVE METHOD</p>
+        <h2>Observe → abstract → simulate → materialize</h2>
+        <ol class="method-steps">
+          <li><strong>Observe</strong><span>environmental and movement relations</span></li>
+          <li><strong>Abstract</strong><span>physiological processes as dynamic variables</span></li>
+          <li><strong>Simulate</strong><span>cross-species agents and feedback loops</span></li>
+          <li><strong>Materialize</strong><span>computed states as light, sound, and kinetics</span></li>
+        </ol>
+        <p class="ethical-note">Computer simulation replaces invasive experimentation with speculative, ethically driven modelling.</p>
+      </article>
+
+      <figure class="body-figure">
+        <div class="body-orbit">
+          <img src="assets/thyroid-illustration.png" alt="Anatomical illustration of the human thyroid gland">
+          <div class="orbit-label label-one">solar rhythm</div>
+          <div class="orbit-label label-two">hormonal flow</div>
+          <div class="orbit-label label-three">affective state</div>
+        </div>
+        <figcaption><strong>Cross-species bridge.</strong> The research places monarch hormonal regulation in dialogue with the human thyroid—not to equate the species, but to model shared relational principles.</figcaption>
+      </figure>
+
+      <article class="card synthesis-card">
+        <p class="section-number">05 / COMPUTATIONAL SYNTHESIS</p>
+        <h2>Emotion becomes a relation.</h2>
+        <p>Biochemical and neural processes are translated into interacting artificial-life agents. Their states emerge from exchanges rather than from fixed emotional labels.</p>
+        <div class="agent-diagram" aria-label="A diagram of interacting computational agents">
+          <span style="--x:12%;--y:58%;--d:0s"></span>
+          <span style="--x:33%;--y:24%;--d:-1s"></span>
+          <span style="--x:51%;--y:69%;--d:-2s"></span>
+          <span style="--x:72%;--y:30%;--d:-3s"></span>
+          <span style="--x:88%;--y:62%;--d:-4s"></span>
+          <svg viewBox="0 0 100 45" aria-hidden="true">
+            <path d="M12 26L33 11L51 31L72 14L88 28M33 11L72 14M12 26L51 31L88 28"/>
+          </svg>
+        </div>
+        <p class="formula">signal + memory + relation + feedback → emergent behaviour</p>
+      </article>
+    </section>
+
+    <section class="realization">
+      <div class="realization-copy">
+        <p class="section-number">06 / REALIZATION</p>
+        <h2><i>Corpus Hormē</i> becomes a polytope.</h2>
+        <p>The butterfly sculpture is a kinetic interface within a larger transparent architecture. Programmable light translates hormonal flows; sound expresses neural transmission and feedback; suspended structures distribute those signals through space.</p>
+        <div class="material-legend">
+          <span><i class="light-dot"></i> LIGHT / biochemical activity</span>
+          <span><i class="sound-dot"></i> SOUND / neural feedback</span>
+          <span><i class="motion-dot"></i> MOTION / adaptive behaviour</span>
+          <span><i class="space-dot"></i> SPACE / collective affect</span>
+        </div>
+      </div>
+      <figure class="installation-figure">
+        <img src="assets/polytope-with-butterflies.gif" alt="Animated spatial polytope populated by luminous butterfly forms">
+        <figcaption>A transparent, multispecies architecture: a distributed emotional body made perceptible through light, sound, code, and motion.</figcaption>
+      </figure>
+      <figure class="scaffold-figure">
+        <img src="assets/scaffold-study.jpg" alt="Minimal study of fine lines forming a suspended architectural scaffold">
+        <figcaption>Scaffold study: an ephemeral room drawn by luminous vectors.</figcaption>
+      </figure>
+    </section>
+
+    <footer>
+      <div class="references">
+        <p class="section-number">SELECTED REFERENCES</p>
+        <p>Barrett et al. (2008), <i>The Embodiment of Emotion</i> · Heinze &amp; Reppert (2012), monarch sun-compass anatomy · Maturana &amp; Varela (1992), <i>The Tree of Knowledge</i> · Salter &amp; Audry (2018), N-Polytope and cybernetic worldmaking · Uexküll, <i>Umwelt</i> · Xenakis, <i>Polytopes</i>.</p>
+      </div>
+      <div class="contact">
+        <p class="section-number">RESEARCHER</p>
+        <p><strong>Hrysovalanti F. Maheras</strong><br><a href="mailto:hryso93@yorku.ca">hryso93@yorku.ca</a><br>Supervisor: Dr. Mark-David Hosale</p>
+      </div>
+      <div class="qr-block">
+        <img src="assets/qr-corpus-horme.svg" alt="QR code linking to the interactive Corpus Horme poster">
+        <div><strong>ENTER THE SYSTEM</strong><br><span>Scan for the interactive poster</span><br><a href="https://feymachaira-ctrl.github.io/corpus-horme/">feymachaira-ctrl.github.io/corpus-horme</a></div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

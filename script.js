@@ -49,6 +49,17 @@ const videoTrigger = document.querySelector(".hero-video-trigger");
 const sculptureVideo = document.querySelector("#sculpture-video");
 const videoClose = document.querySelector(".hero-video-close");
 
+sculptureVideo.defaultMuted = true;
+sculptureVideo.muted = true;
+sculptureVideo.volume = 0;
+
+sculptureVideo.addEventListener("volumechange", () => {
+  if (!sculptureVideo.muted || sculptureVideo.volume !== 0) {
+    sculptureVideo.muted = true;
+    sculptureVideo.volume = 0;
+  }
+});
+
 function closeVideo() {
   sculptureVideo.pause();
   sculptureVideo.currentTime = 0;

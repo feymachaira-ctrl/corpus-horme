@@ -129,7 +129,8 @@ nav .poster-link {
   object-fit: cover;
   object-position: center 45%;
   filter: saturate(.9) contrast(1.15) brightness(.66);
-  transform: scale(1.03);
+  transform: scale(1.5);
+  transform-origin: left top;
 }
 
 .hero-shade {

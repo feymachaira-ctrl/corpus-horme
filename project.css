@@ -305,6 +305,20 @@ h1 em {
   max-height: 51rem;
 }
 
+.project-gallery video {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 72svh;
+  margin-inline: auto;
+  background: #000;
+}
+
+.project-video {
+  padding-top: 1.5rem;
+}
+
 .project-gallery figure:hover img {
   filter: saturate(1) contrast(1.04);
   transform: scale(1.012);

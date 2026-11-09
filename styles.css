@@ -744,6 +744,22 @@ footer a,
   font-size: .55rem;
 }
 
+.portfolio-link {
+  display: inline-block;
+  margin-top: .2rem;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: .2rem;
+}
+
 .qr-block {
   display: grid;
   grid-template-columns: 4.2rem 1fr;

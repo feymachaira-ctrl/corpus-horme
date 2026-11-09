@@ -315,6 +315,15 @@ h1 em {
   background: #000;
 }
 
+.project-embed iframe {
+  display: block;
+  width: min(100%, 75rem);
+  aspect-ratio: 16 / 9;
+  margin-inline: auto;
+  border: 0;
+  background: #000;
+}
+
 .project-gallery figure:hover img {
   filter: saturate(1) contrast(1.04);
   transform: scale(1.012);

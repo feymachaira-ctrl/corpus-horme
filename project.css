@@ -126,10 +126,12 @@ img {
   height: 100%;
 }
 
-.project-hero > img {
+.project-hero > img,
+.project-hero > video {
   position: absolute;
   top: 50%;
   right: 3vw;
+  display: block;
   width: auto;
   max-width: 70vw;
   height: auto;
@@ -543,7 +545,8 @@ footer p {
     min-height: 44rem;
   }
 
-  .project-hero > img {
+  .project-hero > img,
+  .project-hero > video {
     top: 38%;
     right: 50%;
     max-width: calc(100% - 2rem);

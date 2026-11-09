@@ -315,10 +315,6 @@ h1 em {
   background: #000;
 }
 
-.project-video {
-  padding-top: 1.5rem;
-}
-
 .project-gallery figure:hover img {
   filter: saturate(1) contrast(1.04);
   transform: scale(1.012);
